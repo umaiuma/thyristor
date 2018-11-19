@@ -76,7 +76,7 @@ void off_LED4();
 void on_thy_1_2();
 void on_thy_3_1();
 int cnt_gpio_int=0;
-int t_us=10000;
+int t_us=10000; // set time in us
 int cnt_timer_int=0;
 /* USER CODE END PFP */
 
@@ -117,7 +117,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  on_LED1();
+  on_LED2();
    
   /* USER CODE END 2 */
 
@@ -349,7 +349,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if(cnt_gpio_int==0){
     
-    on_LED2();
+    on_LED1();
     on_thy_1_2();  
     HAL_TIM_Base_Start(&htim1);
     cnt_gpio_int++;
